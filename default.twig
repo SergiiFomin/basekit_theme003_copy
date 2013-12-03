@@ -1,0 +1,55 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="bk-pt-default">
+
+    <!--header-->
+    <header>
+        <div class="header">
+            <div class="container">
+                <div class="row">
+                    <article class="span3">
+                        {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+                    </article>
+                    <article class="span9">
+                        {{widget('extendednavigation', 'navigationheader', {})|raw}}
+                    </article>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="global">
+
+        <section class="main-zone">
+            <div class="container">
+                <div class="row">
+                    {{zone('main')|raw}}
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!--footer-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <article class="span4">
+                    {{widget('profile', 'footercolumn2profileemail', { 'profileType':'email', 'email':'profile'})|raw}}
+                    {{widget('profile', 'footercolumn2profilephone', { 'profileType':'phone', 'phone':'profile'})|raw}}
+                </article>
+                <article class="span4">
+                    {{widget('profile', 'footercolumn3profileaddress', { 'profileType':'address', 'address':'profile'})|raw}}                       
+                </article>
+                <article class="span4">
+                    {{widget('profile', 'footercolumn4profilesocialicons', { 'profileType':'socialicons', 'socialicons':'profile'})|raw}}
+                </article>
+            </div>
+        </div>
+    </footer>
+    
+</div>
+
+{% endblock %}

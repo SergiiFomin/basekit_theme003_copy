@@ -1,0 +1,84 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="bg-glow">
+
+    <!--header-->
+    <header>
+        <div class="header">
+            <div class="container">
+                <div class="row">
+                    <article class="span12">
+                        {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+                        {{widget('extendednavigation', 'navigationheader', {})|raw}}
+                    </article>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="global">
+
+        <section class="slider">
+            {{widget('responsiveslideshow', 'responsiveslideshow', {'duration':'3', 'crop':1, 'transSpeed': '1000', 'transType': 'fade', 'showDescription': false, 'showTitle': false, 'showButtons': true, 'showBullets': false, 'allowPause': false, 'allowLoop': true, 'images':[{'imageHeight':'481', 'imageWidth':'2000', 'url':asset('/images/gallery/1.jpg'), 'title':'test title', 'description': 'test desc'},
+            {'imageHeight':'481','imageWidth':'2000', 'url':asset('/images/gallery/2.jpg'), 'title':'test title', 'description': 'test desc'}, {'imageHeight':'481', 'imageWidth':'2000', 'url':asset('/images/gallery/1.jpg'), 'title':'test title', 'description': 'test desc'}, {'imageHeight':'481', 'imageWidth':'2000', 'url':asset('/images/gallery/3.jpg'), 'title':'test title', 'description': 'test desc'}]})|raw}}
+        </section>
+
+        <section class="showcase">
+            <div class="inner">
+                <div class="container">
+                    <div class="row">
+                        <article class="span12">
+                            {{widget('gallery', 'gallery', 
+                            {'showDescription': true,
+                            'showTitle': true,
+                            'images':
+                            [
+                            {'imageHeight':'320', 'imageWidth':'480', 'url':asset('/images/gallery/1.jpg'), 'title':'Image 1', 'description': 'This is image 1'},
+                            {'imageHeight':'320', 'imageWidth':'480', 'url':asset('/images/gallery/2.jpg'), 'title':'Image 2', 'description': 'This is image 2'},
+                            {'imageHeight':'320', 'imageWidth':'480', 'url':asset('/images/gallery/3.jpg'), 'title':'Image 3', 'description': 'This is image 3'},
+                            {'imageHeight':'320', 'imageWidth':'480', 'url':asset('/images/gallery/4.jpg'), 'title':'Image 4', 'description': 'This is image 4'},
+                            {'imageHeight':'320', 'imageWidth':'480', 'url':asset('/images/gallery/5.jpg'), 'title':'Image 5', 'description': 'This is image 5'},
+                            {'imageHeight':'320', 'imageWidth':'480', 'url':asset('/images/gallery/6.jpg'), 'title':'Image 6', 'description': 'This is image 6'}
+                            ]
+                            })|raw}}
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="main-zone">
+            <div class="container">
+                <div class="row">
+                    <article class="span12">
+                        {{zone('main')|raw}}
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!--footer-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <article class="span4">
+                    {{widget('profile', 'footercolumn2profileemail', { 'profileType':'email', 'email':'profile'})|raw}}
+                    {{widget('profile', 'footercolumn2profilephone', { 'profileType':'phone', 'phone':'profile'})|raw}}
+                </article>
+                <article class="span4">
+                    {{widget('profile', 'footercolumn3profileaddress', { 'profileType':'address', 'address':'profile'})|raw}}                       
+                </article>
+                <article class="span4">
+                    {{widget('profile', 'footercolumn4profilesocialicons', { 'profileType':'socialicons', 'socialicons':'profile'})|raw}}
+                </article>
+            </div>
+        </div>
+    </footer>
+    
+</div>
+
+{% endblock %}

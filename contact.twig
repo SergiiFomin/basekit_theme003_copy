@@ -1,0 +1,73 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="bg-glow"> 
+
+    <header>
+        <div class="container">
+            <div class=row>
+                <article class="span12">
+                    <h1 class="brand">{{widget('companyheader', 'companyheader', {"defaultlogo": asset('/images/logo.png')})|raw}}</h1>
+                    <div class="nav-collapse nav-collapse_ collapse">
+                        {{widget('extendednavigation', 'navigationheader', {})|raw}}
+                    </div>
+                </article>
+            </div>
+        </div>
+    </header>
+
+  <div class="global">
+    <!--content-->
+    <section class="">
+      <div class="container">
+          <div class="row">
+              <section class="span12">
+
+                {{widget('map', 'map', {'height': '300', 'zoom': '15', 'address': 'profile'})|raw}}
+
+                <div class="row">
+
+                  <article class="span5">
+                  </article>
+
+                  <article class="span7">
+                    {{zone('main')|raw}}
+                  </article>
+
+                </div>
+              </section>
+          </div>
+      </div>
+    </section>
+  </div>  
+</div>
+
+<!--footer-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <section class="span12">
+                    <div class="row">
+                        <div class="responsivecolumns columns-four-25-25-25-25">
+                            <div class="column columns-four-first">
+                                <h1 class="brand">{{widget('companyname', 'companyname', {"business": "profile"})|raw}}</h1>
+                            </div>
+                            <div class="column columns-four-second">
+                                {{widget('profile', 'footer2footercolumn2profilesocialicons', { 'profileType':'email', 'email':'profile'})|raw}}
+                                {{widget('profile', 'footer2footercolumn2profilesocialicons', { 'profileType':'phone', 'phone':'profile'})|raw}}
+                            </div>
+                            <div class="column columns-four-third">
+                                {{widget('profile', 'footer2footercolumn2profilesocialicons', { 'profileType':'address', 'address':'profile'})|raw}}
+                            </div>
+                            <div class="column columns-four-fourth">
+                                {{widget('profile', 'footer2footercolumn2profilesocialicons', { 'profileType':'socialicons', 'socialicons':'profile'})|raw}}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </footer>
+
+{% endblock %}
